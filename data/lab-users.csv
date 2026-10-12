@@ -1,0 +1,26 @@
+FirstName,LastName,SamAccountName,Department,Title,Group
+Ava,Mercer,ava.mercer,HR,HR Generalist,GG-HR-Users
+Mila,Hayes,mila.hayes,HR,Benefits Coordinator,GG-HR-Users
+Noah,Stone,noah.stone,HR,Recruiter,GG-HR-Users
+Elena,Brooks,elena.brooks,HR,HR Associate,GG-HR-Users
+Kai,Parker,kai.parker,HR,People Analyst,GG-HR-Users
+Liam,Turner,liam.turner,IT,Desktop Support,GG-IT-Admins
+Olivia,Bennett,olivia.bennett,IT,IT Technician,GG-IT-Admins
+Ethan,Cole,ethan.cole,IT,Service Desk Analyst,GG-IT-Admins
+Zoe,Reed,zoe.reed,IT,IT Coordinator,GG-IT-Admins
+Nora,Pierce,nora.pierce,IT,Systems Trainee,GG-IT-Admins
+Lucas,Vega,lucas.vega,Engineering,Software Engineer,GG-Engineering-Users
+Sofia,Walsh,sofia.walsh,Engineering,QA Analyst,GG-Engineering-Users
+Mason,Foster,mason.foster,Engineering,DevOps Intern,GG-Engineering-Users
+Emma,Rhodes,emma.rhodes,Engineering,Developer,GG-Engineering-Users
+Iris,Lane,iris.lane,Engineering,Engineer Associate,GG-Engineering-Users
+Logan,Price,logan.price,Security,Security Analyst,GG-Security-Users
+Aria,Dawson,aria.dawson,Security,Incident Analyst,GG-Security-Users
+Henry,Cross,henry.cross,Security,Monitoring Operator,GG-Security-Users
+Chloe,Kim,chloe.kim,Security,Security Coordinator,GG-Security-Users
+Owen,Blake,owen.blake,Security,Audit Assistant,GG-Security-Users
+Maya,Grant,maya.grant,Contractors,Consultant,GG-Contractors
+Leo,Harris,leo.harris,Contractors,Temp Technician,GG-Contractors
+Ruby,Young,ruby.young,Contractors,Project Contractor,GG-Contractors
+Finn,Lewis,finn.lewis,Contractors,Consultant,GG-Contractors
+Ella,Quinn,ella.quinn,Contractors,Temporary Analyst,GG-Contractors

@@ -1,0 +1,37 @@
+name: Help Desk lab ticket
+description: Planned or observed synthetic support scenario
+body:
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Evidence type
+      options:
+        - Planned scenario — not executed
+        - Guided lab — executed and verified
+        - Blind lab — executed and verified
+    validations:
+      required: true
+  - type: input
+    id: ticket
+    attributes:
+      label: Ticket ID
+      placeholder: HD-001
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: Symptoms, business impact and verified requester authorization
+      description: Never include passwords or identity-verification secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnosis
+    attributes:
+      label: Diagnostic steps, hypotheses and sanitized observed output
+  - type: textarea
+    id: resolution
+    attributes:
+      label: Approved resolution, actual verification and user communication
+  - type: textarea
+    id: security
+    attributes:
+      label: Least privilege, security and cost considerations
