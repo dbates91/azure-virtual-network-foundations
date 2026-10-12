@@ -1,6 +1,6 @@
 # Enterprise Active Directory Help Desk Lab
 
-**Portfolio status: Repository starter / planned lab — no Azure VMs, domain controller, domain join, or help desk tickets have been executed.**
+**Portfolio status: GitHub repository published; lab not deployed — no Azure VMs, domain controller, domain join, or help desk tickets have been executed.**
 
 A practical enterprise IT support simulation built around **Windows Server Active Directory Domain Services (AD DS)**, **DNS**, **Windows 11**, **Group Policy**, **Jira-style ticket handling**, and safe PowerShell automation. The goal is to demonstrate the daily responsibilities of a Tier 1 Help Desk / Desktop Support Technician through reproducible tasks and **verified** troubleshooting evidence.
 
@@ -17,7 +17,7 @@ A practical enterprise IT support simulation built around **Windows Server Activ
 | Endpoint / policy | GPO restrictions, domain join/rejoin, permissions | **Not configured or tested** |
 | Service desk | Twelve real-world scenario templates and ticket notes | Scenarios authored; **not executed** |
 | Automation | PowerShell plan/dry-run user creation, read-only reporting | Source code only; execution evidence pending |
-| Quality controls | Static tests and GitHub Actions | Checks run after publication; no results claimed here |
+| Quality controls | Static tests and GitHub Actions | [Initial offline CI run passed](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/actions/runs/38294061409); no AD or Azure validation claimed |
 
 ## Planned environment — Azure IaaS hosting traditional AD DS
 
@@ -93,7 +93,7 @@ A completed ticket must include: user identity verification (when relevant), sym
 
 ## Current project status
 
-**Repository foundation prepared; cloud lab not deployed; no Azure spend claimed.** After the GitHub repository is created, this starter can be published and enhanced incrementally. The first real milestone is account eligibility, estimated cost and safe access planning, not spinning up paid servers.
+**Repository foundation published and offline checks passed; cloud lab not deployed; no Azure spend claimed.** Proceed through the [eight GitHub phase issues](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues) and verify licensing, security and costs before any VM deployment. The first real milestone is account eligibility, estimated cost and safe access planning, not spinning up paid servers.
 
 ### Primary Microsoft references
 

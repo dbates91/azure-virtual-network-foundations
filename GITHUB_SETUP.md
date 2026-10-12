@@ -1,15 +1,28 @@
-# Publishing This Repository to GitHub
+# GitHub Repository Operations — Enterprise Active Directory Lab
 
-**Owner:** `dbates91`  
-**Repository:** `enterprise-active-directory-helpdesk-lab`  
-**Visibility:** Public  
-**Suggested description:** `Enterprise IT Help Desk lab featuring Windows Server Active Directory, DNS, Group Policy, Windows 11 domain support, PowerShell automation, and realistic ticket troubleshooting.`
+**Repository:** https://github.com/dbates91/enterprise-active-directory-helpdesk-lab  
+**Status:** Public GitHub foundation published; Azure and Active Directory infrastructure not deployed.
 
-## Requested one-time manual step
+## Clone and explore
 
-1. Open https://github.com/new while signed in as `dbates91`.
-2. Create a **public** repository named `enterprise-active-directory-helpdesk-lab`.
-3. Optionally initialize with a README, as with the Apex repository.
-4. Return the new repo URL to ChatGPT so the prepared files can be committed to the repository through the connected GitHub integration.
+```bash
+git clone https://github.com/dbates91/enterprise-active-directory-helpdesk-lab.git
+cd enterprise-active-directory-helpdesk-lab
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
 
-**Do not** use this starter to claim an Azure deployment. No Azure resources or paid services have been created. The source ZIP is a portable copy, and the Git-ready ZIP includes an offline initial commit for local backup.
+Read [PROJECT_ROADMAP.md](PROJECT_ROADMAP.md) and [PROJECT_TRACKER.md](PROJECT_TRACKER.md). The eight [GitHub phase issues](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues) are the implementation queue and should remain open until work is verified.
+
+## PowerShell and cloud safety
+
+Scripts are samples for your **authorized** isolated `adlab.test` environment. User creation is preview-only unless you explicitly opt into a high-impact, confirmed change after domain validation. Do not run any Windows AD mutation or provision any Azure VM during repository setup.
+
+Review [COST_AND_SECURITY.md](COST_AND_SECURITY.md), [Azure deployment plan](docs/deployment/AZURE_DEPLOYMENT_PLAN.md), Windows client licensing, secure management paths, and teardown before cloud spending.
+
+## Evidence-first workflow
+
+Create a topic branch for meaningful changes, record verified commands, update a ticket template with actual findings, open a PR, and update the tracker only after the required evidence exists. Do not put real employee data, credentials, secrets, subscriptions, or unsanitized screenshots in a public repository.
+
+## Latest repository checks
+
+The [initial offline CI run](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/actions/runs/38294061409) passed Python structure tests and PowerShell parsing; it does **not** validate deployed Azure infrastructure or Active Directory.

@@ -21,12 +21,12 @@ Azure-hosted Windows Server AD DS + DNS, a domain-joined licensed Windows client
 
 | Skill | Evidence | State |
 | --- | --- | --- |
-| GitHub project foundation | Initial commit (link after publishing) | Package created locally |
+| GitHub project foundation | [Initial published commit](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/commit/ec8683c1862f5debd289b0fc6bf0477cff5b7cc8) | 35 project files published |
 | Domain controller / AD DS | Not available | Not deployed |
 | Joined client | Not available | Not deployed |
 | Password reset / lockout tickets | Not available | Not executed |
 | Group Policy/DNS troubleshooting | Not available | Not executed |
-| Safe automation | Source and offline test suite | Execution pending |
+| Safe automation | [Offline quality run](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/actions/runs/38294061409) | Source and PowerShell syntax checks passed; AD execution pending |
 | Actual Azure cost | Not available | Not incurred by this project |
 
 ## Interview talking points
