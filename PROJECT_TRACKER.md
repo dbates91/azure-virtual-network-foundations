@@ -4,7 +4,7 @@
 
 | Phase | Milestone | Status | Evidence (commit/ticket/screenshot) | Verified date |
 | --- | --- | --- | --- | --- |
-| [0](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/1) | Account / budget / licensing / private management plan | In Progress | Azure account created (user reported, not independently verified); `RG-ADLAB` creation underway, screenshot pending | — |
+| [0](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/1) | Account / budget / licensing / private management plan | In Progress | Azure account created (user reported); Azure Resource groups screenshot reviewed: `RG-ADLAB` listed in West US 2, `Azure subscription 1`. Screenshot `02-resource-group-created.png` supplied in chat, **not yet committed to GitHub** | 2026-10-19 |
 | [1](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/2) | DC01 / AD DS / DNS | Not Started | — | — |
 | [2](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/3) | OUs / groups / users | Not Started | — | — |
 | [3](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/4) | Workstation domain join | Not Started | — | — |
@@ -35,9 +35,9 @@ Source scaffolding and hypothetical scenarios are supplied as learning materials
 - **2026-10-12:** [First GitHub Actions run](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/actions/runs/38294061409) completed successfully (offline Python repository tests and PowerShell syntax checks only).
 - Eight GitHub phase issues were initially created as Not Started. Subsequent work is tracked below. No DC01, CLIENT01, AD identities, GPOs, ticket resolutions, or measured costs have been verified.
 
-## October 19, 2026 — Phase 0 activity (self-reported)
+## October 19, 2026 — Phase 0 activity (user-provided screenshots reviewed)
 
-- User reported creating a new Azure account and beginning creation of resource group `RG-ADLAB`.
-- **Phase 0: In Progress**, not Completed. Resource group creation, selected Region, subscription eligibility, licensing, budget controls, private access and teardown planning are not yet independently verified.
-- Requested sanitized screenshots of the resource group creation configuration and the successfully created resource group's Overview page. No screenshot has yet been provided or committed.
-- **No Azure VM, domain controller, client VM, AD DS domain, users or security configuration is claimed as deployed or verified.**
+- User reported creating a new Azure account. The submitted **Review + create** screenshot showed `RG-ADLAB`, West US 2 and project tag `Azure-AD-HelpDesk-Lab`; a subsequent **Resource groups list** screenshot showed the new `RG-ADLAB` entry under `Azure subscription 1` in West US 2. This provides visual evidence of resource group creation.
+- **Phase 0: In Progress**, not Completed. Resource group name/Region were visually verified from screenshots. Subscription credit/eligibility, licensing, budget controls, private access and teardown planning remain unverified.
+- Two sanitized screenshots were provided in ChatGPT. Suggested filenames: `01-resource-group-configuration.png` and `02-resource-group-created.png`. The second screenshot shows the resource group **list**, not the resource group's detailed Overview page. **Neither image has been uploaded to this GitHub repository yet.**
+- **The resource group is the first visually verified Azure resource. No Azure VM, domain controller, client VM, AD DS domain, users or security configuration is claimed as deployed or verified.**
