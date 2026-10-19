@@ -4,7 +4,7 @@
 
 | Phase | Milestone | Status | Evidence (commit/ticket/screenshot) | Verified date |
 | --- | --- | --- | --- | --- |
-| [0](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/1) | Account / budget / licensing / private management plan | Not Started | — | — |
+| [0](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/1) | Account / budget / licensing / private management plan | In Progress | Azure account created (user reported, not independently verified); `RG-ADLAB` creation underway, screenshot pending | — |
 | [1](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/2) | DC01 / AD DS / DNS | Not Started | — | — |
 | [2](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/3) | OUs / groups / users | Not Started | — | — |
 | [3](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues/4) | Workstation domain join | Not Started | — | — |
@@ -33,4 +33,11 @@ Source scaffolding and hypothetical scenarios are supplied as learning materials
 
 - **2026-10-12:** All 35 prepared source files published. [Initial source commit](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/commit/ec8683c1862f5debd289b0fc6bf0477cff5b7cc8).
 - **2026-10-12:** [First GitHub Actions run](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/actions/runs/38294061409) completed successfully (offline Python repository tests and PowerShell syntax checks only).
-- Eight GitHub phase issues are open and **Not Started**. No DC01, CLIENT01, Azure resources, AD identities, GPOs, ticket resolutions, or measured costs have been implemented.
+- Eight GitHub phase issues were initially created as Not Started. Subsequent work is tracked below. No DC01, CLIENT01, AD identities, GPOs, ticket resolutions, or measured costs have been verified.
+
+## October 19, 2026 — Phase 0 activity (self-reported)
+
+- User reported creating a new Azure account and beginning creation of resource group `RG-ADLAB`.
+- **Phase 0: In Progress**, not Completed. Resource group creation, selected Region, subscription eligibility, licensing, budget controls, private access and teardown planning are not yet independently verified.
+- Requested sanitized screenshots of the resource group creation configuration and the successfully created resource group's Overview page. No screenshot has yet been provided or committed.
+- **No Azure VM, domain controller, client VM, AD DS domain, users or security configuration is claimed as deployed or verified.**
