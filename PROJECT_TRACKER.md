@@ -50,3 +50,5 @@ Source scaffolding and hypothetical scenarios are supplied as learning materials
 - User reported having a local VMware Fusion Windows 11 Pro client VM; this is **not confirmed to be domain joined or inside the Azure subnet**. Connectivity method, licensing, DNS and safe access remain undecided.
 - Preserve the original 25-account seed and scripts while planning the new 50-person organizational model; **do not import old seed accounts into incompatible OUs**.
 - Phase 0 remains **In Progress**. Do not mark VM/AD or tickets complete until actual verification and screenshots are recorded.
+
+- **2026-10-19:** User submitted Azure deployment Overview screenshot showing **“Your deployment is complete”** for deployment record `VNET-ADLAB-1792452809839` under resource group `RG-ADLAB`. This confirms successful deployment processing. Actual VNet resource Overview, CIDR `10.10.0.0/16`, subnet `AD-Subnet` / `10.10.1.0/24`, and applied tags are **not yet independently verified**. Screenshot was shared in conversation, **not committed to GitHub**. Next action: **Go to resource** and inspect the VNet Overview, then Settings → Subnets. Do not progress to DC01 yet.
