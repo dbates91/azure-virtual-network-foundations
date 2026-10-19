@@ -1,10 +1,10 @@
 # Official Enterprise AD Help Desk Lab Roadmap
 
-**Lab project only — all phases Not Started.** The sequence supports a focused **four-week sprint**, but each stage completes only after deployment/testing evidence, troubleshooting notes and safe cost management.
+**Lab project only — Phase 0 In Progress (RG verified); Phases 1–7 Not Started.** The infrastructure roadmap is separate from the [30-day troubleshooting Academy](docs/academy/30_DAY_CURRICULUM.md). Each stage completes only after observed evidence, troubleshooting notes and safe cost management.
 
 | Phase | Scope | Suggested sprint | Status |
 | --- | --- | --- | --- |
-| 0 | GitHub foundation, Azure eligibility and cost/security gates | Week 1 | Not Started |
+| 0 | GitHub foundation, Azure VNet/subnet, eligibility and cost/security gates | Week 1 | In Progress |
 | 1 | Windows Server DC01, AD DS and DNS on Azure | Week 1 | Not Started |
 | 2 | OUs, groups and fictional users | Week 1 | Not Started |
 | 3 | Domain join and Windows client support | Week 2 | Not Started |
@@ -55,3 +55,7 @@ Complete at least five verified realistic tickets and two independent break/fix 
 - [ ] Cost and teardown verification when Azure services ran
 - [ ] Sanitized screenshots/ticket notes linked in GitHub
 - [ ] 60–90-second technical interview summary
+
+## Parallel Enterprise Help Desk training integration (October 2026)
+
+This **does not replace** infrastructure Phases 0–7. After essential network, DC01/domain and workstation connectivity verification, use the [30-day troubleshooting Academy](docs/academy/README.md) to practice seven categories, 30 fictional tickets, progressive hint reduction, 100-point scoring and a final blind assessment. Apex Technologies is a proposed six-department, ~50-employee simulation; no Azure resources for each employee. The existing 25-person CSV stays unchanged until a new, authorized OU/seed-data design is reviewed.

@@ -1,19 +1,19 @@
 # Enterprise Active Directory Help Desk Lab
 
-**Portfolio status: GitHub repository published; lab not deployed — no Azure VMs, domain controller, domain join, or help desk tickets have been executed.**
+**Portfolio status: Phase 0 in progress. RG-ADLAB is verified from user-supplied Azure screenshots. No VNet, DC01, AD DS, secure local-client link or completed ticket has been verified.**
 
 A practical enterprise IT support simulation built around **Windows Server Active Directory Domain Services (AD DS)**, **DNS**, **Windows 11**, **Group Policy**, **Jira-style ticket handling**, and safe PowerShell automation. The goal is to demonstrate the daily responsibilities of a Tier 1 Help Desk / Desktop Support Technician through reproducible tasks and **verified** troubleshooting evidence.
 
-> **Business scenario (fictional):** The support desk serves a 25-person organization with IT, HR, Engineering, Security and Contractors. Support requests cover identity lifecycle, password resets, lockouts, login failures, domain join, group-based access, DNS and Group Policy. No real employee data is used.
+> **Business scenario (fictional):** **Apex Technologies** is a proposed ~50-employee company with IT, Finance, Human Resources, Sales, Operations and Management departments. The original 25-user, five-department test-data CSV remains intact but is not yet imported; it will be revised after the AD OU design is approved. No real employee data is used.
 
 ## Quick status
 
 | Capability | Planned work | Verified implementation |
 | --- | --- | --- |
-| Azure lab foundation | Resource group, VNet, NSGs, budget/teardown review | **Not deployed** |
+| Azure lab foundation | RG-ADLAB, VNET-ADLAB, AD-Subnet, NSGs, budget/teardown review | **RG-ADLAB verified** from screenshots; VNet/subnet **not verified** |
 | Identity | Windows Server 2022 DC01, AD DS, `adlab.test`, DNS | **Not configured** |
-| Client | CLIENT01, Windows 11 domain joined (subject to eligibility) | **Not deployed** |
-| Directory administration | Five OUs, role groups, 25 fake user accounts | Sample CSV only; **not created in AD** |
+| Client | CLIENT01, user-reported local VMware Fusion Windows 11 Pro client | VM setup **user-reported**; Azure connectivity/domain join not verified |
+| Directory administration | Proposed 6 departmental OUs, role groups, ~50 fictional users (existing 25-user seed preserved) | **Design only**; no AD accounts created |
 | Endpoint / policy | GPO restrictions, domain join/rejoin, permissions | **Not configured or tested** |
 | Service desk | Twelve real-world scenario templates and ticket notes | Scenarios authored; **not executed** |
 | Automation | PowerShell plan/dry-run user creation, read-only reporting | Source code only; execution evidence pending |
@@ -24,29 +24,31 @@ A practical enterprise IT support simulation built around **Windows Server Activ
 ```mermaid
 flowchart TB
     Tech[Help Desk Technician / authorized private access] --> Secure[Approved management path\nBastion / VPN / approved private connection]
-    subgraph Azure[Azure resource group: rg-adlab]
+    subgraph Azure[Azure resource group: RG-ADLAB]
       subgraph VNet[Virtual network 10.10.0.0/16]
-        subgraph Subnet[Private subnet 10.10.1.0/24]
+        subgraph Subnet[AD-Subnet 10.10.1.0/24]
           DC[DC01\nWindows Server 2022\nAD DS + DNS\nPrivate IP 10.10.1.4]
-          Client[CLIENT01\nWindows 11 if licensed\nDomain joined]
+
         end
       end
     end
     Secure -.-> DC
-    Secure -.-> Client
-    Client -->|DNS / Kerberos / LDAP / Group Policy| DC
+    VMware["Local VMware Fusion CLIENT01 (Windows 11 Pro)"]
 ```
 
 The architecture above is a **design proposal**, not evidence that the Azure resources or network paths work. This uses self-managed Windows Server AD DS in Azure VMs; it is **not Microsoft Entra ID** and **not Microsoft Entra Domain Services**. Use a private static Azure NIC address for DC01, configure the VNet DNS resolver for the DC, and refresh DHCP/DNS settings on clients. Avoid exposing RDP (TCP 3389) or domain-controller ports to the internet. [Full design](architecture/README.md).
 
-**Windows 11 licensing gate:** Windows 11 on Azure has licensing and dev/test eligibility requirements. Validate your subscription, image rights and VM sizing with Microsoft's current guidance before deployment. If ineligible, use an appropriately licensed client lab rather than assuming Azure Windows 11 is available. [Lab setup](docs/deployment/AZURE_DEPLOYMENT_PLAN.md).
+**Windows 11 client:** CLIENT01 is a user-reported local VMware Fusion Windows 11 Pro installation. Verify the local Windows license and private Azure routing; do **not** deploy a second paid Azure Windows VM merely to satisfy the design. If considering an Azure-hosted client later, evaluate licensing/eligibility first. [Lab setup](docs/deployment/AZURE_DEPLOYMENT_PLAN.md).
+
+
+**Connectivity design correction:** The Windows 11 Pro client is **local to VMware Fusion** and is not part of an Azure subnet. It requires an approved routed/VPN connection and DNS configuration to join `adlab.test`; paid VPN Gateway/Bastion or a second Azure VM must not be provisioned without cost/licensing review. No tunnel is verified.
 
 ## Planned Active Directory structure
 
 - **Domain:** `adlab.test` (reserved example `.test` namespace for an isolated lab).
-- **OUs:** `IT`, `HR`, `Engineering`, `Security`, `Contractors`.
-- **Role groups:** `GG-IT-Admins`, `GG-HR-Users`, `GG-Engineering-Users`, `GG-Security-Users`, `GG-Contractors`, and `GG-VPN-Users`.
-- **Test identities:** [25 entirely fictional accounts](data/lab-users.csv), seeded only after authorized lab deployment.
+- **Proposed Apex Technologies departments:** `IT`, `Finance`, `HumanResources`, `Sales`, `Operations`, `Management`, with dedicated Users/Groups/Computers containers; see [new OU proposal](docs/academy/APEX_TECHNOLOGIES.md).
+- **Proposed role groups:** `GG-IT-Support`, `GG-Finance-Users`, `GG-HR-Users`, `GG-Sales-Users`, `GG-Operations-Users`, `GG-Management-Users`; existing legacy CSV group values preserved as historical seed data.
+- **Test identities:** [25 old fictional seed records](data/lab-users.csv) are kept as source samples; new ~50-user roster to be developed before lab import. No AD accounts currently verified.
 
 ## Help Desk skills to demonstrate
 
@@ -75,6 +77,8 @@ PowerShell examples are [documented here](scripts/powershell/README.md). `New-La
 | Location | Contents |
 | --- | --- |
 | [PROJECT_ROADMAP.md](PROJECT_ROADMAP.md) | Milestone-by-milestone build and evidence gates |
+| [Step 2 — Azure VNet and subnet](architecture/STEP_02_VNET_AND_SUBNET.md) | Current approved learning task: create `VNET-ADLAB` and `AD-Subnet` |
+| [30-day Enterprise Help Desk Academy](docs/academy/README.md) | 30 days, seven categories, 30 tickets, three difficulty levels, scoring and final assessment |
 | [PROJECT_TRACKER.md](PROJECT_TRACKER.md) | Verified status/evidence log |
 | [architecture/](architecture/README.md) | AD architecture, network and permission boundaries |
 | [docs/deployment/](docs/deployment/README.md) | Azure account/VM/AD prerequisites, approval and teardown |
@@ -93,7 +97,7 @@ A completed ticket must include: user identity verification (when relevant), sym
 
 ## Current project status
 
-**Repository foundation published and offline checks passed; cloud lab not deployed; no Azure spend claimed.** Proceed through the [eight GitHub phase issues](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues) and verify licensing, security and costs before any VM deployment. The first real milestone is account eligibility, estimated cost and safe access planning, not spinning up paid servers.
+**Resource group verified from screenshots; network, VM/domain deployment, secure client connectivity and ticket resolution remain unverified. Offline repository checks passed; no Azure VM spend claimed.** Proceed through the [eight GitHub phase issues](https://github.com/dbates91/enterprise-active-directory-helpdesk-lab/issues) and verify licensing, security and costs before any VM deployment. The first real milestone is account eligibility, estimated cost and safe access planning, not spinning up paid servers.
 
 ### Primary Microsoft references
 

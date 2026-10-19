@@ -12,8 +12,8 @@
 
 ## Gate B — private networking and secure management
 
-- [ ] Create a dedicated resource group `rg-adlab` after approval.
-- [ ] Create VNet `10.10.0.0/16`, subnet `10.10.1.0/24`, and appropriate NSG boundaries.
+- [x] Create dedicated resource group `RG-ADLAB` — **verified by user-provided Azure Resource groups screenshot in West US 2 on 2026-10-19**; no costs/permissions independently verified.
+- [ ] Create `VNET-ADLAB` (10.10.0.0/16), subnet `AD-Subnet` (10.10.1.0/24), and review future NSG boundaries. [Step 2 guide](../../architecture/STEP_02_VNET_AND_SUBNET.md).
 - [ ] Choose an authorized private admin path, estimating costs; do not expose port 3389 on the public internet.
 - [ ] Plan time synchronization, backup/restore and the DC's fixed Azure NIC private IP.
 
@@ -28,8 +28,8 @@
 
 ## Gate D — workstation and support scenarios
 
-1. Deploy CLIENT01 only after validating Windows 11 licensing/image eligibility, or use a correctly licensed alternate client.
-2. Confirm its DNS points to the AD DNS server and resolves SRV records.
+1. Reuse the user-reported **local VMware Fusion Windows 11 Pro** as CLIENT01 after validating OS license, local VMware networking and a secure, cost-approved private route to Azure. An Azure-hosted Windows client is only an optional licensed, paid alternative, not the initial plan.
+2. Confirm the **local client's** secure route to Azure DC01 and DNS resolution over that link, without exposing AD protocol or RDP ports publicly; then test SRV record resolution.
 3. Join the domain after ensuring time sync/network reachability; reboot as needed and verify domain user login.
 4. Implement OUs and groups, preview seed script, and create **disabled** fictional accounts only with authorized execution.
 5. Execute tickets, record evidence, intentionally break only safe lab components, and restore.
@@ -42,3 +42,7 @@ Delete only resources owned exclusively by the lab. Review VMs, disks, NICs, pub
 
 - [Deploy AD DS on Azure VMs](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm)
 - [Windows 11 Azure licensing](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/windows-desktop-multitenant-hosting-deployment)
+
+## Step 2 stop condition
+
+Do not deploy DC01 before user supplies the VNet creation review and VNet/subnet overview evidence and the VM budget/secure access method is approved. The VNet and subnet themselves are not presently verified.
