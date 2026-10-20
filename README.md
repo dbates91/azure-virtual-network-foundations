@@ -1,4 +1,4 @@
-# Enterprise Active Directory Help Desk Lab
+# azure-virtual-network-foundations
 
 **Portfolio status — Azure foundation in progress:** Resource group `RG-ADLAB`, virtual network `VNET-ADLAB`, and subnet `AD-Subnet` have been **created and verified using Azure Portal screenshots**. Domain controller, Active Directory, secure local-client connectivity, and Help Desk tickets are **not yet implemented or verified**.
 
