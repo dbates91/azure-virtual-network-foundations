@@ -1,13 +1,13 @@
 # Step 2 — VNET-ADLAB and AD-Subnet
 
-**Status: Not yet created or independently verified.** This is a guide for creating the network—not proof of deployment.
+**Status: Completed — October 19, 2026.** VNet and subnet were deployed and verified from user-provided Azure Portal screenshots, now linked in the repository. The following procedure records how they were configured.
 
 ## Environment baseline
 
 - Verified from user screenshots: Azure resource group `RG-ADLAB` exists in **West US 2**; it is tagged `Project = Azure-AD-HelpDesk-Lab` on its creation review page.
 - User-reported: Azure free-trial subscription with initial $200 credit. Current balance, expiration and alerts are unverified.
 - User-reported: Windows 11 Pro VM exists locally in VMware Fusion. Its activation, network settings and secure path to Azure are not verified.
-- No evidence yet for VNet, subnet, DC01, AD DS, domain join or a working VPN.
+- The VNet `VNET-ADLAB` and `AD-Subnet` are now screenshot-verified; no DC01, AD DS, domain join or working VPN is verified.
 
 ## Network choice
 
@@ -44,14 +44,15 @@ Azure assigns the VM's private IP to its **Azure NIC**, not by hard-coding an ar
 5. **Tags:** `Project = Azure-AD-HelpDesk-Lab`.
 6. **Review + create:** stop and check all names, Region, address ranges, optional services and cost implications. Take a sanitized screenshot for review before selecting Create.
 
-## Verification, screenshots and technical evidence
+## Verification and published evidence — completed October 19, 2026
 
-- `03-vnet-configuration.png`: Review + create page with selected resource group, region, VNet, CIDR, subnet and relevant optional-feature settings. Redact IDs, emails and sensitive subscription/account details.
-- After approved creation: `04-vnet-overview.png` showing the VNet **exists**, Region and address space.
-- `05-ad-subnet-created.png` showing `AD-Subnet` and exact `10.10.1.0/24` in the VNet's **Subnets** blade.
-- GitHub evidence caption: **What I configured**, **why /16 and /24**, **verified address ranges**, **whether VPN/client connectivity exists**, **security/cost implications**, **what would fail if DNS/subnet were incorrect**.
+- **Configuration:** [resource group setup](../screenshots/01-resource-group-configuration.png) and [subnet settings](../screenshots/03-ad-subnet-configuration.png).
+- **Resource creation:** [resource group exists](../screenshots/02-resource-group-created.png) and [successful VNet deployment](../screenshots/04-vnet-deployment-success.png).
+- **Post-deployment verification:** [VNet Overview](../screenshots/05-vnet-overview-.png) establishes `10.10.0.0/16`, West US 2 and Azure-provided DNS. [Subnets view](../screenshots/06-ad-subnet-verified.png) shows `AD-Subnet` at `10.10.1.0/24` with **251 available assignable addresses**.
+- **Tag and security posture:** VNet Overview confirms `Project = Azure-AD-HelpDesk-Lab`; subnet listing shows no associated subnet-level NSG. This is a configuration observation, *not* proof the future VM is secure.
+- **Scope boundary:** DC01 / `10.10.1.4` and VPN connectivity remain planned; no machine or AD service exists or has been tested.
 
-The "Review + create" screenshot proves intent; only the VNet/Subnets pages after deployment confirm that resources exist.
+[Full screenshot index](../screenshots/README.md). Creation wizard images reflect planned inputs; post-deployment resource screenshots provide verification of the actual Azure objects.
 
 ## Azure vs local VMware — important network boundary
 

@@ -64,3 +64,16 @@ Source scaffolding and hypothetical scenarios are supplied as learning materials
 - **Step 2 (VNet and subnet): Completed — screenshot evidence reviewed in chat.** Suggested screenshot filenames: `04-vnet-deployment-success-redacted.png`, `05-vnet-overview-redacted.png`, and `06-ad-subnet-verified.png`. Screenshots have **not** been added to this GitHub repository yet.
 - **Phase 0 remains In Progress:** Current credit/budget details, secure management and local-to-Azure client connection, Windows OS eligibility and DC01 spend/teardown checks remain to be confirmed before VM provisioning.
 - `10.10.1.4` is a **planned**, not assigned, private Azure NIC address. No DC01 VM, AD DS, VPN or connected local client is independently verified.
+
+## 2026-10-19 — Azure screenshots published to GitHub
+
+Six screenshot files are now present in the public repository, inspected by filename/blob in the `screenshots/` directory:
+
+- [01-resource-group-configuration.png](screenshots/01-resource-group-configuration.png): pre-deployment `RG-ADLAB` setup and tag.
+- [02-resource-group-created.png](screenshots/02-resource-group-created.png): actual resource-group listing.
+- [03-ad-subnet-configuration.png](screenshots/03-ad-subnet-configuration.png): subnet configuration before deployment.
+- [04-vnet-deployment-success.png](screenshots/04-vnet-deployment-success.png): successful Azure deployment record. **Binary Git blob matches the redacted PNG previously prepared** (original correlation ID concealed).
+- [05-vnet-overview-.png](screenshots/05-vnet-overview-.png): VNet Overview. **Binary Git blob matches the redacted PNG previously prepared** (subscription/VNet ID concealed).
+- [06-ad-subnet-verified.png](screenshots/06-ad-subnet-verified.png): deployed `AD-Subnet` and `10.10.1.0/24`, 251 available addresses.
+
+**Step 2 is completed and now supported by publicly linked, actual deployment evidence.** The earlier chronology records that screenshots were not uploaded *at those earlier times*; that is superseded by this update. **Phase 0 overall remains In Progress** because VM spend, Azure credit balance, secure management, private outbound connectivity and domain/VM prerequisites are outstanding. All DC01/AD user/ticket activities remain **Not Started**.
