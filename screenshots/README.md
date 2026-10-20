@@ -1,18 +1,20 @@
-# Screenshot Evidence — Azure AD Help Desk Lab
+# Azure Network Evidence — October 19, 2026
 
-These images document **actual Azure Portal configuration and deployment activity from October 19, 2026**. Review the accompanying captions rather than assuming that every screenshot demonstrates a live, working Active Directory environment.
+These screenshots demonstrate the **deployed Azure resource group, regional VNet and subnet**, plus their preceding wizard configuration.
 
-| Filename | Evidence type | What it establishes |
+| File | What it proves | Evidence type |
 | --- | --- | --- |
-| [01-resource-group-configuration.png](01-resource-group-configuration.png) | Pre-deployment configuration | `RG-ADLAB`, West US 2 and project tag |
-| [02-resource-group-created.png](02-resource-group-created.png) | Deployed Azure resource | Resource-group entry exists |
-| [03-ad-subnet-configuration.png](03-ad-subnet-configuration.png) | Pre-deployment configuration | Subnet name and CIDR selections |
-| [04-vnet-deployment-success.png](04-vnet-deployment-success.png) | Deployment confirmation | Azure reports deployment successful; correlation ID has been concealed |
-| [05-vnet-overview-.png](05-vnet-overview-.png) | Deployed resource inspection | VNet address space, Region, Azure-provided DNS and project tag; Azure identifiers concealed |
-| [06-ad-subnet-verified.png](06-ad-subnet-verified.png) | Deployed resource inspection | `AD-Subnet` / `10.10.1.0/24` / 251 available IPs |
+| [01-resource-group-configuration.png](01-resource-group-configuration.png) | Proposed `RG-ADLAB` settings | Configuration |
+| [02-resource-group-created.png](02-resource-group-created.png) | Resource group exists | Post-creation |
+| [03-ad-subnet-configuration.png](03-ad-subnet-configuration.png) | `AD-Subnet` `10.10.1.0/24` was entered | Configuration |
+| [04-vnet-deployment-success.png](04-vnet-deployment-success.png) | Azure VNet deployment succeeded | Deployment |
+| [05-vnet-overview-.png](05-vnet-overview-.png) | Deployed `VNET-ADLAB`, `10.10.0.0/16`, West US 2, DNS/tag | Post-deployment |
+| [06-ad-subnet-verified.png](06-ad-subnet-verified.png) | `AD-Subnet` `10.10.1.0/24`, 251 available IPs | Post-deployment |
 
-**Privacy check:** The uploaded 04 and 05 PNGs match the original redacted local files by Git blob SHA. For all future public evidence, conceal subscription/tenant IDs, sensitive resource IDs, identities, credentials, access tokens, private endpoints where security-sensitive and password material.
+**Historical naming:** Some screenshots contain `AD` in resource names because that is how the network was originally configured. The current lab is **Azure cloud network architecture**; no Active Directory service has been deployed here.
 
-**What isn't proven:** No VM or stable DC01 private NIC IP has been configured; no AD DS, DNS forest, local-client tunnel, domain join, GPO or live Help Desk ticket has been verified.
+**Evidence integrity:** The original PNG blobs were retained without modification during repository cleanup. Some sensitive Azure identifiers in the uploaded evidence were previously redacted.
 
-See [README](../README.md#verified-azure-networking--october-19-2026) and [project tracker](../PROJECT_TRACKER.md). Future screenshots must link directly to an actual build or troubleshooting result, not merely show a console page.
+**Not demonstrated:** Multi-AZ compute, public/private workloads, NAT, routing tests, subnet NSG enforcement, load balancing, private endpoints or failover.
+
+[Project README](../README.md) · [Verification boundaries](../docs/VALIDATION.md)

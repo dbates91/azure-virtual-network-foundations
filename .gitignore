@@ -1,59 +1,30 @@
-# Credentials, sensitive exports and Windows secrets
+# Secrets and cloud state
 .env
 .env.*
 !.env.example
+*.pem
 *.pfx
 *.p12
-*.pem
 *.key
-*.kdbx
-*.rdp
-*.rdc
-*.ppk
-*.cer
-*.p7b
-*.p7c
-*.p7m
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+**/.terraform/
+*.kubeconfig
 *password*.txt
 *credential*.json
 *secret*.json
-*.kubeconfig
-AzureRmContext.json
-TokenCache.dat
-*.publishsettings
-*.publishsettings.xml
 
-# Local reports, logs and user exports (fictional source CSV intentionally committed)
-reports/
-exports/
-artifacts/
+# Machine-local exports
+.DS_Store
+.vscode/
+.idea/
 *.log
-*.etl
-*.evtx
+*.zip
 *.bak
 *.vhd
 *.vhdx
 *.vmdk
-*.iso
-*.zip
-*.7z
-*.pscredential
-
-# Terraform/other optional tooling
-**/.terraform/
-*.tfstate
-*.tfstate.*
-*.tfplan
-*.tfvars
-*.tfvars.json
-!*.tfvars.example
-
-# OS/editors/Python
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
 __pycache__/
-*.pyc
-.pytest_cache/
 .venv/
